@@ -1,6 +1,6 @@
 body {
     height: 500px;
-    background-color: #40667e;
+    background-color: #091212;
     text-align: center;
 }
 
@@ -12,9 +12,25 @@ input {
     height: auto;
     border-radius: 10%;
 }
-.movies {
-    background-color: #aebbc3;
-}
 h2 {
-    color: black;
+    color: white;
+}
+.movies {
+    background-color: #0f0f0f;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+}
+.search:focus {
+    background-color: #282828;
+    border-radius: 0;
+    color: #ffffff;
+    border: none;
+}
+.search {
+    background-color: #282828;
+    border-radius: 0;
+    color: #535353;
+    border: none;
 }

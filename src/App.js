@@ -11,7 +11,7 @@ class App extends React.Component {
     }
 
     onSubmitForm = e => {
-        e.preventDefault();
+        if (this.inputText !== "") e.preventDefault();
         console.log(this.inputText.value);
         this.searchMovie(this.inputText.value);
         // this.inputText.value = "";
@@ -40,25 +40,24 @@ class App extends React.Component {
                             alt=""
                         />
                         <h2 className="m-3">Search your favorite content </h2>
-                        <form>
+                        <form onSubmit={this.onSubmitForm}>
                             <input
                                 type="text"
-                                className="form-control "
-                                placeholder="Enter name Favorite Content"
-                                required
+                                className="form-control search"
+                                placeholder="Enter here..."
                                 autoFocus
                                 ref={input => (this.inputText = input)}
-                            />
+                                required
+                            ></input>
                             <input
                                 type="submit"
                                 value="Search"
                                 className="btn btn-primary btn-lg mt-3"
-                                onClick={this.onSubmitForm}
                             />
                         </form>
                     </div>
                 </header>
-                <div className="row movies">
+                <div className="card-deck movies text-center">
                     {this.state.movies.map(movie => {
                         return <Movie movie={movie} />;
                     })}
