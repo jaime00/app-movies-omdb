@@ -12,6 +12,7 @@ export default class Main extends Component {
         return (
             <header className="">
                 <div className="container p-5">
+                    <h1>SEARCH YOUR FAVORITE MOVIES</h1>
                     <a
                         href="https://github.com/jaime00/"
                         target="_blank"
@@ -27,7 +28,7 @@ export default class Main extends Component {
                     <form onSubmit={this.onSubmitForm}>
                         <input
                             type="text"
-                            className="form-control searchInput"
+                            className="form-control searchInput p-4"
                             placeholder="Enter here..."
                             autoFocus
                             ref={input => (this.inputText = input)}
@@ -37,7 +38,7 @@ export default class Main extends Component {
                         <input
                             type="submit"
                             value="Search"
-                            className="btn btn-primary btn-lg mt-3"
+                            className="btn btn-primary btn-lg mt-3 btn-outline-warning"
                         />
                     </form>
                 </div>

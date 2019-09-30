@@ -1,7 +1,9 @@
-.movies {
+.results {
     background-color: #0f0f0f;
     text-align: center;
     align-content: center;
     align-items: center;
     align-self: center;
+    min-height: 800px;
+    height: 800px;
 }

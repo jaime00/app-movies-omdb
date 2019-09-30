@@ -3,10 +3,6 @@
     height: auto;
 }
 
-input {
-    width: 100px;
-}
-
 .searchInput:focus {
     background-color: #282828;
     border-radius: 0;
@@ -20,4 +16,20 @@ input {
     border-radius: 0;
     color: #ffffff;
     border: none;
+    caret-color: #90e0db;
+    font-size: 25px;
+    line-height: 44px;
+    letter-spacing: -0.005em;
+}
+
+.btn-outline-warning {
+    color: #90e0db;
+    background-color: transparent;
+    background-image: none;
+    border-color: #90e0db;
+}
+
+.btn-outline-warning:hover {
+    background-color: #90e0db;
+    color: black;
 }

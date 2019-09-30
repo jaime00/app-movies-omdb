@@ -5,14 +5,14 @@ img {
 
 .movie {
     height: 400px;
-    max-height: 450px;
+    max-height: 500px;
     border: none;
     background-color: #282828;
     color: white;
 }
 
 .movie:hover {
-    border: .4px solid #727272;
+    border: 0.4px dotted #90e0db;
 }
 .year {
     background-color: #9d9d9d;
