@@ -1,0 +1,23 @@
+.logo {
+    height: auto;
+    height: auto;
+}
+
+input {
+    width: 100px;
+}
+
+.searchInput:focus {
+    background-color: #282828;
+    border-radius: 0;
+    color: #ffffff;
+    border: none;
+    box-shadow: none;
+}
+
+.searchInput {
+    background-color: #282828;
+    border-radius: 0;
+    color: #ffffff;
+    border: none;
+}

@@ -1,15 +1,18 @@
 img {
     width: 90px;
     height: 290px;
-    border-radius: 2%;
 }
 
-.card {
+.movie {
     height: 400px;
     max-height: 450px;
     border: none;
     background-color: #282828;
     color: white;
+}
+
+.movie:hover {
+    border: .4px solid #727272;
 }
 .year {
     background-color: #9d9d9d;

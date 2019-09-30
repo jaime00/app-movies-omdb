@@ -9,8 +9,8 @@ const selectPoster = props => {
 
 const Movie = props => {
     return (
-        <div className="" key={props.movie.imdbID}>
-            <div className="card p-1 m-2" style={{ width: "18rem" }}>
+        <div>
+            <div className="rounded card p-1 m-2 movie" style={{ width: "18rem" }}>
                 <img
                     src={selectPoster(props.movie)}
                     className="card-img-top"
