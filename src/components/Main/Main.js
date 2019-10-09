@@ -1,16 +1,17 @@
 import React, { Component } from "react";
 import "./Main.css";
+
 export default class Main extends Component {
     onSubmitForm = e => {
         e.preventDefault();
         this.props.searchMovie(this.inputText.value);
-        // this.inputText.value = "";
+        // this.inputText.vxalue = "";
         this.inputText.focus();
     };
 
     render() {
         return (
-            <header className="">
+            <div>
                 <div className="container p-5">
                     <h1>SEARCH YOUR FAVORITE MOVIES</h1>
                     <a
@@ -20,7 +21,8 @@ export default class Main extends Component {
                     >
                         <img
                             src="https://avatars2.githubusercontent.com/u/20992836?s=460&v=4"
-                            className="logo m-5 rounded "
+                            className="m-5 rounded"
+                            id="logo"
                             title="Click Me!"
                             alt="My Profile on Github"
                         />
@@ -42,7 +44,7 @@ export default class Main extends Component {
                         />
                     </form>
                 </div>
-            </header>
+            </div>
         );
     }
 }

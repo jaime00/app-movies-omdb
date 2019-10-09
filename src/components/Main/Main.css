@@ -1,6 +1,6 @@
-.logo {
-    height: auto;
-    height: auto;
+#logo {
+    height: 6rem;
+    width: 6rem;
 }
 
 .searchInput:focus {
@@ -32,4 +32,8 @@
 .btn-outline-warning:hover {
     background-color: #90e0db;
     color: black;
+}
+
+h1 {
+    color: white;
 }

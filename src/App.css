@@ -8,6 +8,6 @@ h2 {
     color: white;
 }
 
-::selection{
-    background-color: #90e0db
+::selection {
+    background-color: #90e0db;
 }

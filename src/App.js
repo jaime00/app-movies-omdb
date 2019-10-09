@@ -13,7 +13,7 @@ class App extends React.Component {
     }
 
     searchMovie = name => {
-        fetch("https://www.omdbapi.com/?s=" + (name + "&apikey=344d2014"))
+        fetch(`https://www.omdbapi.com/?s=${name}&apikey=344d2014`)
             .then(res => res.json())
             .then(data => {
                 this.setState({ movies: data.Search });
@@ -21,6 +21,7 @@ class App extends React.Component {
     };
 
     render() {
+        console.log(this.state);
         return (
             <>
                 <Main searchMovie={this.searchMovie} />
