@@ -1,26 +1,41 @@
-import React from "react";
+import React, { Component } from "react";
 import "./Movie.css";
 import Modal from "../Modal/Modal";
 
-class Movie extends React.Component {
-    selectPoster = props => {
-        return props.Poster === "N/A"
+export default class Movie extends Component {
+    constructor(props) {
+        super(props);
+        this.data = {};
+        this.movie = React.createRef();
+        this.state = {
+            showModal: false
+        };
+    }
+    selectPoster = movie => {
+        return movie.Poster === "N/A"
             ? "https://lightwidget.com/wp-content/uploads/2018/05/local-file-not-found-295x300.png"
-            : "" + props.Poster;
+            : "" + movie.Poster;
     };
 
-    handleClick = () => {
-        return this.props.findMovie(this.props.movie.imdbID);
-    };
+    async handlerClick() {
+        if (this.data.imdbID !== this.props.movie.imdbID) {
+            this.data = await this.props.fetchContent(this.props.movie.imdbID);
+        }
+
+        this.setState({
+            showModal: true
+        });
+    }
 
     render() {
         return (
             <>
                 <div
-                    onClick={() => this.handleClick()}
+                    onClick={() => this.handlerClick()}
                     data-toggle="modal"
                     data-target={"#" + this.props.movie.imdbID}
                     className="rounded card m-1 movie"
+                    ref={this.movie}
                 >
                     <img
                         src={this.selectPoster(this.props.movie)}
@@ -36,13 +51,10 @@ class Movie extends React.Component {
                         </div>
                     </div>
                 </div>
-                <Modal
-                    movie={this.props.movie}
-                    selectPoster={this.selectPoster}
-                />
+                {this.state.showModal ? (
+                    <Modal movie={this.data} selectPoster={this.selectPoster} />
+                ) : null}
             </>
         );
     }
 }
-
-export default Movie;

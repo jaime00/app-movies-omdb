@@ -3,7 +3,7 @@ import React from "react";
 export default function Modal(props) {
     return (
         <div
-            className="modal fade"
+            className="modal"
             id={"" + props.movie.imdbID}
             tabIndex="-1"
             role="dialog"
@@ -11,10 +11,13 @@ export default function Modal(props) {
             aria-hidden="true"
         >
             <div
-                className="modal-dialog modal-dialog-centered black"
+                className="modal-lg modal-dialog modal-dialog-centered black align-middle"
                 role="document"
             >
-                <div className="modal-content">
+                <div
+                    className="modal-content"
+                    style={{ backgroundColor: "whitesmoke" }}
+                >
                     <div className="modal-header">
                         <h5 className="modal-title">{props.movie.Title}</h5>
                         <button
@@ -26,10 +29,13 @@ export default function Modal(props) {
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div className="row p-3">
+                    <div className="p-3 row">
                         <div
-                            className="rounded p-1 m-2 col"
-                            style={{ width: "18rem", border: "1px solid grey" }}
+                            className="rounded p-1 m-2 col-4"
+                            style={{
+                                width: "18rem",
+                                border: "1px solid grey"
+                            }}
                         >
                             <img
                                 src={props.selectPoster(props.movie)}
@@ -38,24 +44,24 @@ export default function Modal(props) {
                             />
                         </div>
                         <div className="rounded p-1 m-2 col">
-                            <div className="">
-                                <b>Year:</b>
+                            <div className="p-1">
+                                <b>Year: </b>
                                 {props.movie.Year}
                             </div>
-                            <div className="">
-                                <b>Released:</b>
+                            <div className="p-1">
+                                <b>Released: </b>
                                 {props.movie.Released}
                             </div>
-                            <div className="">
-                                <b>Genre:</b>
+                            <div className="p-1">
+                                <b>Genre: </b>
                                 {props.movie.Genre}
                             </div>
-                            <div className="">
-                                <b>Director:</b>
+                            <div className="p-1">
+                                <b>Director: </b>
                                 {props.movie.Director}
                             </div>
-                            <div className="">
-                                <b>Plot:</b>
+                            <div className="p-1">
+                                <b>Plot: </b>
                                 {props.movie.Plot}
                             </div>
                         </div>

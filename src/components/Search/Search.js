@@ -1,25 +1,50 @@
 import React, { Component } from "react";
-import Movie from "../Movie/Movie";
-import SearchNotFound from "../SearchNoFound/SearchNotFound";
+import "./Search.css";
 
 export default class Search extends Component {
-    findMovie = id => {
-        return this.props.state.movies.filter(movie => movie.imdbID === id);
+    onSubmitForm = e => {
+        e.preventDefault();
+        this.props.searchMovie(this.inputText.value);
+        // this.inputText.vxalue = "";
+        this.inputText.focus();
     };
 
     render() {
-        if (this.props.state.movies === undefined) return <SearchNotFound />;
+        return (
+            <div>
+                <div className="container p-5 search">
+                    <h1>SEARCH YOUR FAVORITE CONTENT</h1>
+                    <a
+                        href="https://github.com/jaime00/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src="https://avatars2.githubusercontent.com/u/20992836?s=460&v=4"
+                            className="m-5 rounded"
+                            id="logo"
+                            title="Click Me!"
+                            alt="My Profile on Github"
+                        />
+                    </a>
+                    <form onSubmit={this.onSubmitForm}>
+                        <input
+                            type="text"
+                            className="form-control searchInput p-4"
+                            placeholder="Enter here..."
+                            autoFocus
+                            ref={input => (this.inputText = input)}
+                            required
+                        />
 
-        return this.props.state.movies.map(movie => {
-            return (
-                <div className="d-inline-block">
-                    <Movie
-                        movie={movie}
-                        key={movie.imdbID}
-                        findMovie={this.findMovie}
-                    />
+                        <input
+                            type="submit"
+                            value="Search"
+                            className="btn btn-primary btn-lg mt-3 btn-outline-warning"
+                        />
+                    </form>
                 </div>
-            );
-        });
+            </div>
+        );
     }
 }
