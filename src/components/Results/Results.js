@@ -24,7 +24,11 @@ export default class Results extends Component {
                 {this.props.state.movies.map(movie => {
                     return (
                         <div className="d-inline-block" key={movie.imdbID}>
-                            <Movie state={this.props.state} movie={movie} fetchContent={this.props.fetchContent}/>
+                            <Movie
+                                state={this.props.state}
+                                movie={movie}
+                                fetchContent={this.props.fetchContent}
+                            />
                         </div>
                     );
                 })}

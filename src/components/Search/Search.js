@@ -13,7 +13,7 @@ export default class Search extends Component {
         return (
             <div>
                 <div className="container p-5 search">
-                    <h1>SEARCH YOUR FAVORITE CONTENT</h1>
+                    <h1 class="glow">SEARCH YOUR FAVORITE CONTENT{"  "}</h1>
                     <a
                         href="https://github.com/jaime00/"
                         target="_blank"
@@ -40,7 +40,7 @@ export default class Search extends Component {
                         <input
                             type="submit"
                             value="Search"
-                            className="btn btn-primary btn-lg mt-3 btn-outline-warning"
+                            className="btn btn-lg mt-3 search-button"
                         />
                     </form>
                 </div>

@@ -1,15 +1,16 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+
 #logo {
     height: 6rem;
     width: 6rem;
 }
 
 .searchInput:focus {
-    background-color: #28282848;
+    background-color: #282828;
     border-radius: 0;
     color: #ffffff;
     border: none;
-    border: 1px solid #90e0db;
-    /* border-bottom: 1px solid #90e0db; */
+    border: 0.5px solid gray;
     box-shadow: none;
 }
 
@@ -19,31 +20,65 @@
     border-radius: 0;
     color: #ffffff;
     border: none;
-    caret-color: #90e0db;
+    caret-color: whitesmoke;
     font-size: 25px;
     line-height: 44px;
     letter-spacing: -0.005em;
 }
 
-.btn-outline-warning {
-    background-color: #90e0db;
+.search-button {
+    background-color: white;
     color: black;
     border: none;
 }
 
-.btn-outline-warning:hover {
-    border: 0.5px solid #90e0db;
-    background-color: transparent;
-    color: #90e0db;
-}
-
-h1 {
-    color: #7a7777;
-    font-family: "Bangers", cursive;
-    font-size: 3.7rem;
-    letter-spacing: 4px;
+.search-button:hover {
+    color: white;
+    background-color: black;
+    border-color: #f5d6b8;
 }
 
 .search {
     font-family: "Open Sans", sans-serif;
+}
+
+.btn.focus,
+.btn:focus {
+    box-shadow: 0 0 0 0.2rem whitesmoke;
+}
+
+/* glow text */
+.glow {
+    color: whitesmoke;
+    font-family: "Press Start 2P", cursive;
+    font-size: 3vw;
+    letter-spacing: 4px;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px black, 0 0 40px black,
+            0 0 50px black, 0 0 60px black, 0 0 70px black, 0 0 80px black;
+    }
+}
+
+@media (max-width: 800px) {
+    .glow {
+        padding-top: 50px;
+        font-size: 25px;
+    }
+}
+@media (min-width: 1000px) {
+    .glow {
+        font-size: 35px;
+    }
+}
+@media (max-width: 325px) {
+    .glow {
+        font-size: 19px;
+    }
 }

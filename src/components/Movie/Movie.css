@@ -12,10 +12,28 @@ img {
 }
 
 .movie:hover {
-    border-bottom: 4px solid gray;
+    margin: 0 0;
+    border-bottom: 1px solid gray;
     cursor: pointer;
 }
 .year {
     background-color: #9d9d9d;
     color: black;
 }
+
+@media (max-width: 330px) {
+    .movie {
+        width: 15rem;
+        height: 380px;
+        font-size: 13px;
+    }
+    .movie .card-body {
+        padding: 6px 5px;
+    }
+}
+
+/* @media (max-width: 330px) {
+    .movie {
+        width: 16rem;
+    }
+} */

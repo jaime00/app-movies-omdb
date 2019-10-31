@@ -17,6 +17,12 @@ export default class Movie extends Component {
             : "" + movie.Poster;
     };
 
+    selectTitle = cadena => {
+        let longitud = cadena.length;
+        return longitud > 60
+            ? cadena.slice(0, parseInt(longitud / 2)) + "..."
+            : cadena;
+    };
     async handlerClick() {
         if (this.data.imdbID !== this.props.movie.imdbID) {
             this.data = await this.props.fetchContent(this.props.movie.imdbID);
@@ -43,7 +49,9 @@ export default class Movie extends Component {
                         alt={this.props.movie.Title}
                     />
                     <div className="card-body p-2">
-                        <p className="">{this.props.movie.Title}</p>
+                        <p className="">
+                            {this.selectTitle(this.props.movie.Title)}
+                        </p>
                         <div>
                             <i href="#" className="badge year">
                                 {this.props.movie.Year}

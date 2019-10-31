@@ -33,21 +33,13 @@ class App extends React.Component {
     render() {
         // console.log(this.state);
         return (
-            <Main
-                searchMovie={this.searchMovie}
-                state={this.state}
-                fetchContent={this.fetchContent}
-            />
+            <>
+                <Search searchMovie={this.searchMovie} />
+                <Results state={this.state} fetchContent={this.fetchContent} />
+                <Footer />
+            </>
         );
     }
 }
-function Main(props) {
-    return (
-        <div id="main">
-            <Search searchMovie={props.searchMovie} />
-            <Results state={props.state} fetchContent={props.fetchContent} />
-            <Footer />
-        </div>
-    );
-}
+
 export default App;
