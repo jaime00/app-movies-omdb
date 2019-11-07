@@ -1,3 +1,18 @@
+# app-movies-omdb
+This is a page for movie search using React - consuming OMDb API 
+
+
+![preview](https://lh3.googleusercontent.com/6bK3lJi5q5SDhKzgTOE6lRmxfqSC-3AXnsSPt2eoOUwEPNkguL-F45eBw5gCxnylIzXHuu5n0IBlOw=w1920-h902-rw 'preview')
+
+![search](https://lh6.googleusercontent.com/uEZozoPwJtokgGKTBH1HTlJIfEE81deN_Pj524UC98by1H70O_lBvR07X4_84YwR9QQtN3ttZ-jjRA=w1920-h902-rw 'search')
+
+![modal](https://lh4.googleusercontent.com/Qov_KwPAfLeaCR-nnizdPiTDPmTRYvQF_g_zH43HY1jeh79_GReqtlxMUPKfoKbkrEzWx4o1dF4sG9xc9DmE=w1920-h937-rw 'modal')
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
