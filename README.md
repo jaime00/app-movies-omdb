@@ -1,17 +1,11 @@
 # app-movies-omdb
-This is a page for movie search using React - consuming OMDb API 
+This is a page for movie search using **React** library - consuming **OMDb API**
 
+![app-react-movies](https://user-images.githubusercontent.com/20992836/68535214-d10cf680-030c-11ea-93da-58430eacf08f.PNG)
 
-![preview](https://lh3.googleusercontent.com/6bK3lJi5q5SDhKzgTOE6lRmxfqSC-3AXnsSPt2eoOUwEPNkguL-F45eBw5gCxnylIzXHuu5n0IBlOw=w1920-h902-rw 'preview')
+![captura2](https://user-images.githubusercontent.com/20992836/68535241-51335c00-030d-11ea-844e-24353a34c916.PNG)
 
-![search](https://lh6.googleusercontent.com/uEZozoPwJtokgGKTBH1HTlJIfEE81deN_Pj524UC98by1H70O_lBvR07X4_84YwR9QQtN3ttZ-jjRA=w1920-h902-rw 'search')
-
-![modal](https://lh4.googleusercontent.com/Qov_KwPAfLeaCR-nnizdPiTDPmTRYvQF_g_zH43HY1jeh79_GReqtlxMUPKfoKbkrEzWx4o1dF4sG9xc9DmE=w1920-h937-rw 'modal')
-
-
-
-
-
+![Captura3](https://user-images.githubusercontent.com/20992836/68535257-90fa4380-030d-11ea-981d-7039abdc7dc7.PNG)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
