@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import "./Search.css";
-
+import UserIconGitHub from "../../images/UserIconGitHub.png";
 export default class Search extends Component {
     onSubmitForm = e => {
         e.preventDefault();
         this.props.searchMovie(this.inputText.value);
-        // this.inputText.vxalue = "";
+        // this.inputText.placeholder = this.inputText.value;
+        // this.inputText.value = "";
         this.inputText.focus();
     };
 
@@ -13,14 +14,14 @@ export default class Search extends Component {
         return (
             <div>
                 <div className="container p-5 search">
-                    <h1 class="glow">SEARCH YOUR FAVORITE CONTENT{"  "}</h1>
+                    <h1 className="glow">SEARCH YOUR FAVORITE CONTENT</h1>
                     <a
                         href="https://github.com/jaime00/"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
                         <img
-                            src="https://avatars2.githubusercontent.com/u/20992836?s=460&v=4"
+                            src={UserIconGitHub}
                             className="m-5 rounded"
                             id="logo"
                             title="Click Me!"
@@ -33,7 +34,7 @@ export default class Search extends Component {
                             className="form-control searchInput p-4"
                             placeholder="Enter here..."
                             autoFocus
-                            ref={input => (this.inputText = input)}
+                            ref={input => this.inputText = input}
                             required
                         />
 

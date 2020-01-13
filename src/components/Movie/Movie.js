@@ -5,11 +5,11 @@ import Modal from "../Modal/Modal";
 export default class Movie extends Component {
     constructor(props) {
         super(props);
-        this.data = {};
         this.movie = React.createRef();
         this.state = {
+            data: {},
             showModal: false
-        };
+        }
     }
     selectPoster = movie => {
         return movie.Poster === "N/A"
@@ -23,21 +23,28 @@ export default class Movie extends Component {
             ? cadena.slice(0, parseInt(longitud / 2)) + "..."
             : cadena;
     };
-    async handlerClick() {
-        if (this.data.imdbID !== this.props.movie.imdbID) {
-            this.data = await this.props.fetchContent(this.props.movie.imdbID);
-        }
 
-        this.setState({
-            showModal: true
-        });
+    fetchContent = async (id) => {
+        return await fetch(`http://www.omdbapi.com/?i=${id}&plot=full&apikey=344d2014`)
+            .then(res => res.json())
+            .then(data => data)
     }
 
+    LoadingModal = async () => {
+        try {
+            if (this.state.data.imdbID !== this.props.movie.imdbID) {
+                let data = await this.fetchContent(this.props.movie.imdbID);
+                this.setState({ data: data, showModal: true })
+            }
+        } catch (error) {
+            console.error(error)
+        }
+    }
     render() {
+        this.LoadingModal()
         return (
             <>
                 <div
-                    onClick={() => this.handlerClick()}
                     data-toggle="modal"
                     data-target={"#" + this.props.movie.imdbID}
                     className="rounded card m-1 movie"
@@ -59,9 +66,7 @@ export default class Movie extends Component {
                         </div>
                     </div>
                 </div>
-                {this.state.showModal ? (
-                    <Modal movie={this.data} selectPoster={this.selectPoster} />
-                ) : null}
+                {(this.state !== undefined) && <Modal movie={this.state.data} selectPoster={this.selectPoster} />}
             </>
         );
     }

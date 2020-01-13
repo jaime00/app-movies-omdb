@@ -8,30 +8,44 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            movies: []
+            movies: [],
+            movieName: "",
+            loading: false
         };
     }
 
-    searchMovie = name => {
-        fetch(`https://www.omdbapi.com/?s=${name}&apikey=344d2014`)
-            .then(res => res.json())
-            .then(data => {
-                this.setState({ movies: data.Search });
-            });
-    };
-
-    async fetchContent(id) {
-        let aux = {};
-        await fetch(`http://www.omdbapi.com/?i=${id}&plot=full&apikey=344d2014`)
-            .then(res => res.json())
-            .then(data => {
-                aux = data;
-            });
-        return aux;
+    removeSameIds = data => {
+        let ids = []
+        data.Search.forEach(movie => ids.push(movie.imdbID))
+        let dist = [...new Set(ids)];
+        if (dist.length === ids.length) return data.Search
+        let newData = []
+        dist.forEach(id => {
+            let found = data.Search.find(element => (element.imdbID === id));
+            newData.push(found);
+        })
+        return newData
     }
 
+    searchMovie = async (movieName) => {
+        if (this.state.movieName !== movieName) {
+            this.setState({ loading: true })
+            this.timeoutId = setTimeout(async () => {
+                let response = await fetch(`https://www.omdbapi.com/?s=${movieName}&apikey=344d2014`);
+                let data = await response.json();
+                if (data.Response === "True") {
+                    data = this.removeSameIds(data)
+                    this.setState({ movies: data, movieName, loading: false });
+                } else {
+                    this.setState({ movies: undefined, movieName, loading: false });
+                }
+            }, 0);
+        }
+    };
+    componentWillUnmount() {
+        clearTimeout(this.timeoutId)
+    }
     render() {
-        // console.log(this.state);
         return (
             <>
                 <Search searchMovie={this.searchMovie} />

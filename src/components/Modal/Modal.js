@@ -39,7 +39,7 @@ export default function Modal(props) {
                         >
                             <img
                                 src={props.selectPoster(props.movie)}
-                                className="card-img-top"
+                                className="card-img-top img-fluid"
                                 alt={props.movie.Title}
                             />
                         </div>
